@@ -1,0 +1,29 @@
+.container {
+  background-color: skyblue;
+  box-shadow: 0 0 0.5rem 0 #00000075;
+  padding: 0.25rem 0.5rem;
+
+  height: calc(32px + 1rem);
+  
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 63rem;
+    margin: 0 auto;
+
+    p {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: bold;
+      // font-family: monospace;
+    }
+  
+    figure {
+      margin: 0;
+      margin-top: 0.25rem;
+    }
+  } 
+
+}

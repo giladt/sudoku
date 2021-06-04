@@ -1,0 +1,53 @@
+.game {
+  display: flex;
+  padding: 2rem 1rem;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: auto;
+
+  &>aside {
+    display: flex;
+    flex-direction: column;
+    flex: 1 10rem 15rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    max-width: 15rem;
+    padding: 1rem;
+
+    border: 1px solid black;
+
+    text-align: center;
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    div>button {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+    }
+
+
+    &>button {
+      padding: 0.25rem 2rem;
+      border-radius: 0.5rem;
+      background: lightpink;
+    }
+
+    &>section {
+      &>ul{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 0.85rem;
+        text-align: left;
+        list-style: none;
+        padding-left: 0;
+      }
+    }
+  }
+}

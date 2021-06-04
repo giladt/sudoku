@@ -1,0 +1,33 @@
+.winner {
+  width: 45rem;
+  height: 45rem;
+  box-sizing: border-box;
+  margin: 0.5rem auto;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 0 0.5rem 0 rgba(0,0,0,0.5);
+  border-radius: 0.5rem;
+  background-color: lightcyan;
+
+  font-size: 1.5rem;
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 1.5em;
+    padding: 0.25rem 2rem;
+    border-radius: 0.5rem;
+    background: lightpink;
+  }
+}

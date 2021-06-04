@@ -1,0 +1,7 @@
+.app {
+  display: grid;
+  grid-template-rows: 3rem calc(100vh - 4rem) 1rem;
+  flex-direction: column;
+  flex-basis: 100vh;
+  overflow: hidden;
+}
