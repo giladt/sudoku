@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './Navbar.module.scss'
+import React from 'react';
+import styles from './Navbar.module.scss';
 
 const Navbar:React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Navbar:React.FC = () => {
         <p>SUDOCarl</p>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

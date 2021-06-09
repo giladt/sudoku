@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar' 
-import Footer from './Footer' 
-import styles from './Layout.module.scss'
+import Navbar from './Navbar';
+import Footer from './Footer';
+import styles from './Layout.module.scss';
 
 const Layout:React.FC = ({children}) => {
   return (
@@ -10,6 +10,7 @@ const Layout:React.FC = ({children}) => {
       {children}
       <Footer />
     </main>
-)}
+  );
+};
 
-export default Layout
+export default Layout;

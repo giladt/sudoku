@@ -1,2 +1,2 @@
-import Winner from './Winner'
-export default Winner
+import Winner from './Winner';
+export default Winner;

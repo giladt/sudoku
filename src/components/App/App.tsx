@@ -1,16 +1,16 @@
-import React, { useContext } from 'react'
-import Board from '../Board'
-import Winner from '../Winner'
-import Layout from '../Layout'
-import styles from './App.module.scss'
-import { GameContext } from '../../context/game-context'
+import React, { useContext } from 'react';
+import Board from '../Board';
+import Winner from '../Winner';
+import Layout from '../Layout';
+import styles from './App.module.scss';
+import { GameContext } from '../../context/game-context';
 
-const App:React.FC = () => {
-  const {isComplete, level, setLevel, startGame } = useContext(GameContext)
+const App:React.FC = ():JSX.Element => {
+  const {isComplete, level, setLevel, startGame } = useContext(GameContext);
 
   const switchLevel = (e:React.MouseEvent<HTMLButtonElement>) => {
-    setLevel(parseInt(e.currentTarget.name))
-  }
+    setLevel(parseInt(e.currentTarget.name));
+  };
 
   return (
     <Layout>
@@ -30,7 +30,7 @@ const App:React.FC = () => {
             <button name="2" disabled={localStorage.length<3} onClick={switchLevel}>Hard</button>
           </div>
           <button onClick={e=>{
-            startGame(true)
+            startGame(true);
           }}>Restart Game</button>
           <section>
             <h1>
@@ -48,6 +48,6 @@ const App:React.FC = () => {
       </section>
     </Layout>
   );
-}
+};
 
 export default App;
