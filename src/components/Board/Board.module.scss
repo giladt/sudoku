@@ -30,7 +30,9 @@
         margin: 0.1rem;
         cursor: default;
         height: -webkit-fill-available;
+        height: -moz-available;
         width: -webkit-fill-available;
+        width: -moz-available;
       }
   
       &>input[type=number] {
@@ -40,7 +42,9 @@
         padding: 0.1rem;
         margin: 0.1rem;
         height: -webkit-fill-available;
+        height: -moz-available;
         width: -webkit-fill-available;
+        width: -moz-available;
         
         color: blue;
 
