@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, FC } from "react";
 import styles from "./Board.module.scss";
 import { GameContext } from "../../context/game-context";
+import classnames from "classnames";
 
 const Board: FC = () => {
   const {
@@ -167,13 +168,14 @@ const Board: FC = () => {
     <div className={styles.container}>
       {board &&
         board.map((col, idx) => {
-          let classes = `${styles.cell} 
-          ${styles["col-" + (idx % 9) + 1]} 
-          ${styles["row-" + Math.floor(idx / 9) + 1]} 
-          ${{ [styles.highlighted]: stateBoard[idx] }} 
-          ${{ [styles.bigCol]: idx % 3 === 0 }} 
-          ${{ [styles.bigRow]: idx % 27 >= 0 && idx % 27 < 9 }} 
-        `;
+          let classes = classnames(
+            styles.cell,
+            styles["col-" + (idx % 9) + 1],
+            styles["row-" + Math.floor(idx / 9) + 1],
+            { [styles.highlighted]: stateBoard[idx] },
+            { [styles.bigCol]: idx % 3 === 0 },
+            { [styles.bigRow]: idx % 27 >= 0 && idx % 27 < 9 }
+          );
 
           return (
             <div className={classes} key={idx}>
