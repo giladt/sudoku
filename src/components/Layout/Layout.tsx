@@ -1,9 +1,9 @@
-import React from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import styles from './Layout.module.scss';
+import React from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import styles from "./Layout.module.scss";
 
-const Layout:React.FC = ({children}) => {
+const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <main className={styles.app}>
       <Navbar />

@@ -155,7 +155,7 @@ const Board: FC = () => {
     highlightSquares(e.currentTarget.name);
   };
 
-  const handleCellBlur = (e: React.FocusEvent<HTMLInputElement>): void => {
+  const handleCellBlur = (): void => {
     checkCompletion();
     setStateBoard(Array(81).fill(false));
   };
