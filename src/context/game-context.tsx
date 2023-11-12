@@ -1,5 +1,6 @@
 import { createContext, useState, useCallback, useEffect } from "react";
-import { TGameContextProps, TBoards, TGameProviderProps } from "../lib/types";
+import { TGameContextProps, TGameProviderProps } from "../lib/types";
+import boards from "../assets/boards.json";
 
 const GameContext = createContext<TGameContextProps>({
   level: 0,
@@ -17,18 +18,6 @@ const GameContext = createContext<TGameContextProps>({
   checkCompletion: () => {},
   startGame: () => {},
 });
-
-async function getBoards(): Promise<Array<TBoards>> {
-  const boards = await await (
-    await fetch("/src/assets/boards.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-  ).json();
-  return boards;
-}
 
 const GameProvider = ({ children }: TGameProviderProps) => {
   const [level, setLevel] = useState<number>(-1);
@@ -73,19 +62,19 @@ const GameProvider = ({ children }: TGameProviderProps) => {
 
   const startGame = useCallback(
     (doReset: boolean = false) => {
-      getBoards().then((res) => {
-        const data: Array<Array<number | null>> = res.map((item) => item.board);
-        const currentBoard: Array<number | string> = data[level]?.map(
-          (item) => item || ""
-        );
+      const data: Array<Array<number | null>> = boards.map(
+        (item) => item.board
+      );
+      const currentBoard: Array<number | string> = data[level]?.map(
+        (item) => item || ""
+      );
 
-        setIsComplete(false);
-        if (currentBoard) {
-          if (doReset) localStorage.removeItem(`level-${level}-solution`);
-          setBoard(currentBoard);
-          setSolved(Array(2).fill(Array(9).fill(false)));
-        }
-      });
+      setIsComplete(false);
+      if (currentBoard) {
+        if (doReset) localStorage.removeItem(`level-${level}-solution`);
+        setBoard(currentBoard);
+        setSolved(Array(2).fill(Array(9).fill(false)));
+      }
     },
     [level]
   );
@@ -103,14 +92,12 @@ const GameProvider = ({ children }: TGameProviderProps) => {
   useEffect(() => {
     if (solutionBoard.length && level >= 0) {
       if (!localStorage.getItem(`level-${level}-solution`)) {
-        getBoards().then((data) => {
-          if (data[level].board) {
-            localStorage.setItem(
-              `level-${level}-solution`,
-              JSON.stringify(data[level].board)
-            );
-          }
-        });
+        if (boards[level].board) {
+          localStorage.setItem(
+            `level-${level}-solution`,
+            JSON.stringify(boards[level].board)
+          );
+        }
       } else {
         localStorage.setItem(
           `level-${level}-solution`,
