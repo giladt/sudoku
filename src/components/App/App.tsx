@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { JSX, useContext } from "react";
 import Board from "../Board";
 import Winner from "../Winner";
 import Layout from "../Layout";

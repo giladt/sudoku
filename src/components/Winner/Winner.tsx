@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { JSX, useContext } from "react";
 import styles from "./Winner.module.scss";
 import { GameContext } from "../../context/game-context";
 
